@@ -6,4 +6,4 @@ EXPOSE 4000
 COPY requirements.txt requirements.txt
 RUN pip install -r requirements.txt
 COPY . .
-CMD ["flask", "run", "-p", "4000"]
+CMD ["flask", "run", "-h", "localhost", "-p", "4000"]
