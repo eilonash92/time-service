@@ -72,9 +72,7 @@ spec:
             container('curl') {
                 script {
                     def status_code = sh "curl -s -o /dev/null -w %{http_code} http://$APP_NAME:5000"
-                    print status_code
-                    print status_code.contains("200")
-                    if (status_code.contains("200")) {
+                    if (status_code == "200") {
                         echo "Test succeeded, the website is up!"
                     }
                     else {
