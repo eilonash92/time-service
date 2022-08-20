@@ -62,7 +62,7 @@ spec:
     stage('Deploy') {
         steps {
             container('helm') {
-                sh """helm upgrade --install $APP_NAME ./helm"""
+                sh """helm upgrade --install --recreate-pods $APP_NAME ./helm"""
                 echo "Deployed $APP_NAME succesfully to kubernetes"
             }
         }
