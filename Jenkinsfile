@@ -72,7 +72,7 @@ spec:
             container('curl') {
                 script {
                     status_code = sh (
-                    script: 'curl -s -o /dev/null -w %{http_code} http://$APP_NAME:5000',
+                    script: 'curl -s -o /dev/null -w %{http_code} http://$APP_NAME:4000',
                      returnStdout: true
                     ).trim()
                     if (status_code.toInteger() == 200) {
