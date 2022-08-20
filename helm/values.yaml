@@ -1,0 +1,17 @@
+# Default values for helm.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+appName: time-service
+replicaCount: 2
+
+container:
+  port: 5001
+image:
+  repository: time-service
+  name: eilonash92/time-service:latest
+  # Overrides the image tag whose default is the chart appVersion.
+  tag: ""
+
+service:
+  type: LoadBalancer
+  port: 5001
