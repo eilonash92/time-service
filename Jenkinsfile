@@ -71,8 +71,11 @@ spec:
         steps {
             container('curl') {
                 script {
-                    def status_code = sh "curl -s -o /dev/null -w %{http_code} http://$APP_NAME:5000"
-                    if (status_code == "200") {
+                    status_code = sh (
+                    script: 'curl -s -o /dev/null -w %{http_code} http://$APP_NAME:5001',
+                     returnStdout: true
+                    ).trim()
+                    if (status_code.toInteger() == 200) {
                         echo "Test succeeded, the website is up!"
                     }
                     else {
