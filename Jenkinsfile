@@ -71,6 +71,7 @@ spec:
         steps {
             container('curl') {
                 script {
+                    sh "sleep 30"
                     status_code = sh (
                     script: 'curl -s -o /dev/null -w %{http_code} http://$APP_NAME:4000',
                      returnStdout: true
