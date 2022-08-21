@@ -41,7 +41,7 @@ helm install jenkins
 10. Click on "New Item" and give your pipeline the name "deploy_time_service" and choose "FreeStyle" option.
 
 11. Under Source Code Management tab choose Git and add the time_service Github repository URL (No credentials are needed, since the repos are public)
-![](https://ibb.co/fD9dRqq)
+![SCM](previews/SCM.png?raw=true "SCM")
 
 12. Click "Save" and repeat steps 6 + 7 for facts_service.
 
@@ -59,9 +59,7 @@ b. **Deploy** - Deploying the new image using helm install.
 
 c. **Test** - Using cURL to test the web app is alive and it fails the step if the web app not returning 200 OK.
 
-
-![](https://ibb.co/0c6YrLP)
-![](https://ibb.co/z7kYgjR)
-![](https://ibb.co/M5HhntQ)
-![](https://ibb.co/M5HhntQ)
-
+![Facts_Service](previews/Facts_Service.png?raw=true "Facts_Service")
+![Time_Service](previews/Time_Service.png?raw=true "Time_Service")
+![Stages](previews/Pipeline_Stages.png?raw=true "Stages")
+![Main](previews/Main.png?raw=true "Main")
